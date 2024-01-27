@@ -6,6 +6,7 @@ import './index.css'
 import Login from './components/Login.jsx'
 import Signup from './components/Signup.jsx'
 import Layout from './Layout.jsx'
+import Sidebar from './components/sidebar.jsx'
 
 
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: 'signup',
         element: <Signup />
+      },
+      {
+        path: 'dashboard',
+        element: <Sidebar />
       }
     ]
   }
