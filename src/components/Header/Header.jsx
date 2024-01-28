@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 
 const Header = () => {
     return (
-        <header >
-            <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
-                <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+        <header className="sticky top-0" >
+            <nav className="bg-white border-gray-200 px-6 py-2.5">
+                <div className="flex flex-wrap justify-between items-center mx-auto">
                     <a href="https://rnpsoft.com" className="flex items-center">
                         <img className="w-100 h-8 sm:h-9 mr-3 bg-primary-600 p-2 rounded-lg" src="https://framerusercontent.com/images/xLOBENWTydKgd9jy7VGqXoMKkww.png" alt="rnpsoft Logo" />
                     </a>
