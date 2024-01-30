@@ -1,6 +1,6 @@
 import React from 'react'
 
-const EmployeeCard = ({ name, empImg, date, role, mobile, email }) => {
+const EmployeeCard = ({ name, date, role, mobile, email , empImg}) => {
     return (
         <div className="flex items-center justify-around rounded">
             <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
