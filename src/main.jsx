@@ -15,6 +15,7 @@ import Internship from './components/Dashboard/Internship.jsx'
 import Jobs from './components/Dashboard/Jobs.jsx'
 import Chat from './components/Dashboard/Chat.jsx'
 import Activity from './components/Dashboard/Activity.jsx'
+import Settings from './components/Dashboard/Settings.jsx'
 
 
 
@@ -85,6 +86,13 @@ const router = createBrowserRouter([
         element: [
           <Sidebar />,
           <Activity />
+        ]
+      },
+      {
+        path: 'settings',
+        element: [
+          <Sidebar />,
+          <Settings />
         ]
       }
 
