@@ -4,9 +4,9 @@ const Internship = () => {
   return (
     <div className="p-4 sm:ml-64">
       <div className="p-4 border-2 border-gray-200 rounded-lg dark:border-gray-700">
-      <h1>Internships</h1>
+        <h1>Internships</h1>
 
-      {/* three rows of cards */}
+        {/* three rows of cards */}
         <div className="grid grid-cols-3 gap-4 mb-4">
         </div>
         <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
