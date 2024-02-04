@@ -4,10 +4,10 @@ const Login = () => {
     return (
         <div>
 
-            <div className="bg-gray-50">
+            <div className="bg-primary-800">
                 <div className="flex flex-col items-center justify-center p-6 mx-auto md:h-screen lg:py-0">
                     <a href="https://rnpsoft.com" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 ">
-                        <img className="w-100 h-12 bg-primary-600 py-2 px-4 rounded-xl" src="https://framerusercontent.com/images/xLOBENWTydKgd9jy7VGqXoMKkww.png" alt="logo" />
+                        <img className="w-100 h-12" src="https://framerusercontent.com/images/xLOBENWTydKgd9jy7VGqXoMKkww.png" alt="logo" />
                     </a>
                     <div className="w-full bg-white rounded-xl shadow dark:border md:mt-0 sm:max-w-md xl:p-0 ">
                         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">

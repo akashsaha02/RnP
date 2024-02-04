@@ -3,10 +3,10 @@ import { Link } from "react-router-dom"
 
 const Signup = () => {
     return (
-        <div className="bg-gray-50 py-10">
+        <div className="bg-primary-800 py-10">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <a href="https://rnpsoft.com" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 ">
-                    <img className="w-100 h-12 bg-primary-600 py-2 px-4 rounded-xl" src="https://framerusercontent.com/images/xLOBENWTydKgd9jy7VGqXoMKkww.png" alt="logo" />
+                    <img className="w-100 h-12 " src="https://framerusercontent.com/images/xLOBENWTydKgd9jy7VGqXoMKkww.png" alt="logo" />
                 </a>
                 <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -21,10 +21,6 @@ const Signup = () => {
                             <div>
                                 {/* <label for="last-name" className="block mb-2 text-sm font-medium text-gray-900 ">Last Name</label> */}
                                 <input type="text" name="last-name" id="last-name" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-3xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Last name" required="" />
-                            </div>
-                            <div>
-                                {/* <label for="employee-id" className="block mb-2 text-sm font-medium text-gray-900 ">Employee Id</label> */}
-                                <input type="text" name="employee-id" id="employee-id" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-3xl focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Employee Id" required="" />
                             </div>
                             <div>
                                 {/* <label for="email" className="block mb-2 text-sm font-medium text-gray-900 ">Your email</label> */}

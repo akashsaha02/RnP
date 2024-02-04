@@ -7,16 +7,16 @@ const Sidebar = () => {
         className="fixed left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
-        <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50">
+        <div className="h-full px-3 py-4 overflow-y-auto bg-primary-800">
           <ul className="space-y-2 font-medium">
             {/* Dashboard Start */}
             <li>
               <Link
                 to="/dashboard"
-                className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-300 hover:rounded-3xl group focus:bg-gray-300 focus:rounded-3xl group"
+                className="flex items-center p-2 text-white rounded-lg  hover:bg-primary-600 hover:rounded-3xl group focus:bg-primary-600 focus:rounded-3xl group"
               >
                 <svg
-                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900"
+                  className="w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   width="33"
                   height="33"
@@ -34,10 +34,10 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/employee"
-                className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-300 hover:rounded-3xl group focus:bg-gray-300 focus:rounded-3xl group"
+                className="flex items-center p-2 text-white rounded-lg  hover:bg-primary-600 hover:rounded-3xl group focus:bg-primary-600 focus:rounded-3xl group"
               >
                 <svg
-                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900"
+                  className="w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   width="26"
                   height="32"
@@ -55,10 +55,10 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/projects"
-                className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-300 hover:rounded-3xl group focus:bg-gray-300 focus:rounded-3xl group"
+                className="flex items-center p-2 text-white rounded-lg  hover:bg-primary-600 hover:rounded-3xl group focus:bg-primary-600 focus:rounded-3xl group"
               >
                 <svg
-                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900"
+                  className="w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
                   height="32"
@@ -76,10 +76,10 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/termination"
-                className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-300 hover:rounded-3xl group focus:bg-gray-300 focus:rounded-3xl group"
+                className="flex items-center p-2 text-white rounded-lg  hover:bg-primary-600 hover:rounded-3xl group focus:bg-primary-600 focus:rounded-3xl group"
               >
                 <svg
-                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900"
+                  className="w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
                   height="32"
@@ -97,10 +97,10 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/internships"
-                className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-300 hover:rounded-3xl group focus:bg-gray-300 focus:rounded-3xl group"
+                className="flex items-center p-2 text-white rounded-lg  hover:bg-primary-600 hover:rounded-3xl group focus:bg-primary-600 focus:rounded-3xl group"
               >
                 <svg
-                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900"
+                  className="w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   width="33"
                   height="32"
@@ -119,10 +119,10 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/jobs"
-                className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-300 hover:rounded-3xl group focus:bg-gray-300 focus:rounded-3xl group"
+                className="flex items-center p-2 text-white rounded-lg  hover:bg-primary-600 hover:rounded-3xl group focus:bg-primary-600 focus:rounded-3xl group"
               >
                 <svg
-                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900"
+                  className="w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
                   height="32"
@@ -149,10 +149,10 @@ const Sidebar = () => {
               <li>
               <Link
                 to="/settings"
-                className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-300 hover:rounded-3xl group focus:bg-gray-300 focus:rounded-3xl group"
+                className="flex items-center p-2 text-white rounded-lg  hover:bg-primary-600 hover:rounded-3xl group focus:bg-primary-600 focus:rounded-3xl group"
               >
                 <svg
-                className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900"
+                className="w-6 h-6 text-white transition duration-75 dark:text-gray-400 group-hover:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   width="33"
                   height="33"
@@ -170,10 +170,10 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/chat"
-                className="flex items-center p-2 mt-20 text-gray-900 rounded-lg hover:bg-gray-300 hover:rounded-3xl group focus:bg-gray-300 focus:rounded-3xl group"
+                className="flex items-center p-2 mt-20 text-white rounded-lg hover:bg-primary-600 hover:rounded-3xl group focus:bg-primary-600 focus:rounded-3xl group"
               >
                 <svg
-                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900"
+                  className="w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   width="33"
                   height="33"
@@ -191,10 +191,10 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/activity"
-                className="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-300 hover:rounded-3xl group focus:bg-gray-300 focus:rounded-3xl group"
+                className="flex items-center p-2 text-white rounded-lg  hover:bg-primary-600 hover:rounded-3xl group focus:bg-primary-600 focus:rounded-3xl group"
               >
                 <svg
-                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900"
+                  className="w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   width="33"
                   height="33"
