@@ -55,7 +55,7 @@ const Projects = () => {
               <button
                 className="text-white border-2 bg-red-600 hover:bg-white hover:text-red-600 hover:border-red-600 focus:ring-2 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
               >
-                Dlelete
+                Delete
               </button>
             </div>
           </div>
