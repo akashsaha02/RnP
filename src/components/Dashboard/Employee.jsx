@@ -56,6 +56,7 @@ const Employee = () => {
                 </div>
 
             </div>
+            <div className='flex justify-center items-center'>
             <ReactPaginate
                 previousLabel={"previous"}
                 nextLabel={"next"}
@@ -71,6 +72,7 @@ const Employee = () => {
                 nextLinkClassName={"flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-blue-100 hover:text-blue-700"}
                 breakLinkClassName={"flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-blue-100 hover:text-blue-700 "}
             />
+            </div>
         </div>
     )
 }
