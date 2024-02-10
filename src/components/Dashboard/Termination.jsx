@@ -78,10 +78,10 @@ const Termination = () => {
 
         <div className="flex item-center">
           <div className="w-1/2 h-60 mt-5 bg-white mr-5 rounded-xl">
-            <div class="flex items-center ">
-              <div class="w-12 h-12 rounded-xl bg-gray-200 mt-5 ml-5 mr-3"></div>
+            <div className="flex items-center ">
+              <div className="w-12 h-12 rounded-xl bg-gray-200 mt-5 ml-5 mr-3"></div>
               <div>
-                <p class="font-semibold mt-4 text-2xl">Shoo Phar Dhie</p>
+                <p className="font-semibold mt-4 text-2xl">Shoo Phar Dhie</p>
                 <p className="text-gray-400 text-0.5x1">Designer</p>
               </div>
             </div>
@@ -99,10 +99,10 @@ const Termination = () => {
             </div>
           </div>
           <div className="w-1/2 h-60 mt-5 bg-white rounded-xl">
-            <div class="flex items-center ">
-              <div class="w-12 h-12 rounded-xl bg-gray-200 mt-5 ml-5 mr-3"></div>
+            <div className="flex items-center ">
+              <div className="w-12 h-12 rounded-xl bg-gray-200 mt-5 ml-5 mr-3"></div>
               <div>
-                <p class="font-semibold mt-4 text-2xl">Shoo Phar Dhie</p>
+                <p className="font-semibold mt-4 text-2xl">Shoo Phar Dhie</p>
                 <p className="text-gray-400 text-0.5x1">Designer</p>
               </div>
             </div>
