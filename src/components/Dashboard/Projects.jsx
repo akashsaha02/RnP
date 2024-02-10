@@ -215,11 +215,10 @@ const Projects = () => {
                 </div>
               </form>
             </div>
-<<<<<<< HEAD
-          </div>
+          </div >
           {/* Searchbar and Heading End */}
 
-          <div className='my-3'>
+          < div className='my-3' >
             <div className="flex justify-between items-center border border-black/10 rounded-lg px-3 py-1.5 gap-x-3 shadow-sm shadow-white/50 duration-300 text-black">
               <input type="checkbox" className="cursor-pointer" />
               <h2>Project 1</h2>
@@ -236,110 +235,108 @@ const Projects = () => {
               >
                 Delete
               </button>
-=======
-            <div className='w-64'>
-              <select id="filter" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                <option value="week" selected>This Week</option>
-                <option value="day" selected>Today</option>
-                <option value="month">This Month</option>
-                <option value="year">This Year</option>
-              </select>
->>>>>>> f8697282c62868712cbdff352760a87c44d37149
-            </div>
-          </div>
-          {/* Searchbar and Heading End */}
-          {/* Projects start */}
-          <div className='my-3'>
-            <div className="mb-2">
-              {/* Optional Add Projects with start and end date */}
-              <div className='flex justify-around items-center mb-4'>
-                <h2 className='font-bold text-lg'>Add Projects</h2>
-                <input
-                  className='border-2 w-72 border-gray-200 rounded-lg px-3 py-1.5 mr-2'
-                  value={text}
-                  placeholder='Enter Project name'
-                  onChange={e => setText(e.target.value)}
-                  required
-                />
-                <input
-                  required
-                  className='border-2 border-gray-200 rounded-lg px-3 py-1.5 mr-2'
-                  type="date"
-                  placeholder='Enter Start Date'
-                  value={startDate}
-                  onChange={e => setStartDate(e.target.value)}
-                />
-                <input
-                  required
-                  className='border-2 border-gray-200 rounded-lg px-3 py-1.5 mr-2'
-                  type="date"
-                  placeholder='Enter Start Date'
-                  value={endDate}
-                  onChange={e => setEndDate(e.target.value)}
-                />
-                <button
-                  className='text-white bg-primary-600 border-2 hover:bg-white hover:text-primary-600 hover:border-primary-600 focus:ring-2 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2'
-                  onClick={() => { if (text && startDate && endDate) addTask(text, startDate, endDate) }}>Add</button>
-
+              <div className='w-64'>
+                <select id="filter" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                  <option value="week" selected>This Week</option>
+                  <option value="day" selected>Today</option>
+                  <option value="month">This Month</option>
+                  <option value="year">This Year</option>
+                </select>
               </div>
-              {/* Optional Add Projects with start and end date */}
-              {/* Project Heading Start */}
-              <div className='flex justify-between items center font-bold text-lg bg-gray-100 h-12 mb-3 rounded-lg'>
-                <div>Completed</div>
-                <div className='mr-20 pr-10'>Projects</div>
-                <div className='flex justify-center items-center'>
-                  <div className='flex justify-around items-center mr-32'>
-                    <h2 className='w-30 mr-10'>Start</h2>
-                    <h2 className='w-30 mr-10 '>Deadline</h2>
-                  </div>
-                  <h2 className=' w-32'>Actions</h2>
+            </div>
+            {/* Searchbar and Heading End */}
+            {/* Projects start */}
+            <div className='my-3'>
+              <div className="mb-2">
+                {/* Optional Add Projects with start and end date */}
+                <div className='flex justify-around items-center mb-4'>
+                  <h2 className='font-bold text-lg'>Add Projects</h2>
+                  <input
+                    className='border-2 w-72 border-gray-200 rounded-lg px-3 py-1.5 mr-2'
+                    value={text}
+                    placeholder='Enter Project name'
+                    onChange={e => setText(e.target.value)}
+                    required
+                  />
+                  <input
+                    required
+                    className='border-2 border-gray-200 rounded-lg px-3 py-1.5 mr-2'
+                    type="date"
+                    placeholder='Enter Start Date'
+                    value={startDate}
+                    onChange={e => setStartDate(e.target.value)}
+                  />
+                  <input
+                    required
+                    className='border-2 border-gray-200 rounded-lg px-3 py-1.5 mr-2'
+                    type="date"
+                    placeholder='Enter Start Date'
+                    value={endDate}
+                    onChange={e => setEndDate(e.target.value)}
+                  />
+                  <button
+                    className='text-white bg-primary-600 border-2 hover:bg-white hover:text-primary-600 hover:border-primary-600 focus:ring-2 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2'
+                    onClick={() => { if (text && startDate && endDate) addTask(text, startDate, endDate) }}>Add</button>
+
                 </div>
+                {/* Optional Add Projects with start and end date */}
+                {/* Project Heading Start */}
+                <div className='flex justify-between items center font-bold text-lg bg-gray-100 h-12 mb-3 rounded-lg'>
+                  <div>Completed</div>
+                  <div className='mr-20 pr-10'>Projects</div>
+                  <div className='flex justify-center items-center'>
+                    <div className='flex justify-around items-center mr-32'>
+                      <h2 className='w-30 mr-10'>Start</h2>
+                      <h2 className='w-30 mr-10 '>Deadline</h2>
+                    </div>
+                    <h2 className=' w-32'>Actions</h2>
+                  </div>
+                </div>
+                {/* Project Heading End */}
+                {/* Project Component Start */}
+                <div>
+                  {tasks
+                    .slice(pagesVisited, pagesVisited + itemsPerPage)
+                    .map(task => (
+                      console.log(task),
+                      <ProjectItem
+                        key={task.id}
+                        task={task}
+                        deleteTask={deleteTask}
+                        editTask={editTask}
+                        startDate={task.startDate}
+                        toggleCompleted={toggleCompleted}
+                        endDate={task.endDate}
+                      />
+                    ))}
+                </div>
+                {/* Project Component End */}
               </div>
-              {/* Project Heading End */}
-              {/* Project Component Start */}
-              <div>
-                {tasks
-                  .slice(pagesVisited, pagesVisited + itemsPerPage)
-                  .map(task => (
-                    console.log(task),
-                    <ProjectItem
-                      key={task.id}
-                      task={task}
-                      deleteTask={deleteTask}
-                      editTask={editTask}
-                      startDate={task.startDate}
-                      toggleCompleted={toggleCompleted}
-                      endDate={task.endDate}
-                    />
-                  ))}
-              </div>
-              {/* Project Component End */}
             </div>
+            {/* Projects End */}
+          </div >
+          <div className='flex justify-center items-center'>
+            {tasks.length > itemsPerPage + 1 &&
+              <ReactPaginate
+                previousLabel={"previous"}
+                nextLabel={"next"}
+                breakLabel={"..."}
+                pageCount={pageCount}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={3}
+                onPageChange={changePage}
+                containerClassName={"inline-flex -space-x-px text-sm justify-content-center items-center mt-4 mb-4"}
+                pageLinkClassName={"flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-blue-100 hover:text-blue-700 focus:bg-blue-100 focus:text-blue-700"}
+                previousLinkClassName={"flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-blue-100 hover:text-blue-700"}
+                nextClassName={"page-item"}
+                nextLinkClassName={"flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-blue-100 hover:text-blue-700"}
+                breakLinkClassName={"flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-blue-100 hover:text-blue-700 "}
+
+              />}
           </div>
-          {/* Projects End */}
-        </div>
-        <div className='flex justify-center items-center'>
-          {tasks.length > itemsPerPage + 1 &&
-            <ReactPaginate
-              previousLabel={"previous"}
-              nextLabel={"next"}
-              breakLabel={"..."}
-              pageCount={pageCount}
-              marginPagesDisplayed={2}
-              pageRangeDisplayed={3}
-              onPageChange={changePage}
-              containerClassName={"inline-flex -space-x-px text-sm justify-content-center items-center mt-4 mb-4"}
-              pageLinkClassName={"flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-blue-100 hover:text-blue-700 focus:bg-blue-100 focus:text-blue-700"}
-              previousLinkClassName={"flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-blue-100 hover:text-blue-700"}
-              nextClassName={"page-item"}
-              nextLinkClassName={"flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-blue-100 hover:text-blue-700"}
-              breakLinkClassName={"flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-blue-100 hover:text-blue-700 "}
-
-            />}
-        </div>
+        </div >
       </div>
-
-    </div>
+    </div >
   )
 }
 
