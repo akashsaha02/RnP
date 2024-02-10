@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-
+import LeaveCard from "../Common/LeaveCard";
 import ReactPaginate from "react-paginate";
 
 const Termination = () => {
   const [pageCount, setpageCount] = useState(0);
   const [chosen, setChosen] = useState(null);
+  const [items, setItems] = useState([]);
 
   const handleParagraphClick = (option) => {
     setChosen(option);
   };
-  let limit = 50;
+  let limit = 6;
 
   useEffect(() => {
     const getLeaves = async () => {
@@ -19,6 +20,7 @@ const Termination = () => {
       const data = await res.json();
       const total = res.headers.get("x-total-count");
       setpageCount(Math.ceil(total / limit));
+      setItems(data);
     };
 
     getLeaves();
@@ -37,6 +39,7 @@ const Termination = () => {
     console.log(data);
     let currentPage = data.selected + 1;
     const employyesFormServer = await fetchLeaves(currentPage);
+    setItems(employyesFormServer);
   };
 
   return (
@@ -76,49 +79,19 @@ const Termination = () => {
 
         {/* Card for leaves starts */}
 
-        <div className="flex item-center">
-          <div className="w-1/2 h-60 mt-5 bg-white mr-5 rounded-xl">
-            <div className="flex items-center ">
-              <div className="w-12 h-12 rounded-xl bg-gray-200 mt-5 ml-5 mr-3"></div>
-              <div>
-                <p className="font-semibold mt-4 text-2xl">Shoo Phar Dhie</p>
-                <p className="text-gray-400 text-0.5x1">Designer</p>
-              </div>
-            </div>
-            <div className="p-4 mt-2 text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus,
-              accusamus ab itaque quo.
-            </div>
-            <div className="flex space-x-40 mt-4">
-              <div className="text-gray-400 ml-5 font-semibold text-0.5x1">
-                Feb-2021 to Mar-2021
-              </div>
-              <button className="bg-violet-700 p-2 pl-5 pr-5 rounded-lg text-white">
-                Approve
-              </button>
-            </div>
-          </div>
-          <div className="w-1/2 h-60 mt-5 bg-white rounded-xl">
-            <div className="flex items-center ">
-              <div className="w-12 h-12 rounded-xl bg-gray-200 mt-5 ml-5 mr-3"></div>
-              <div>
-                <p className="font-semibold mt-4 text-2xl">Shoo Phar Dhie</p>
-                <p className="text-gray-400 text-0.5x1">Designer</p>
-              </div>
-            </div>
-            <div className="p-4 mt-2 text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus,
-              accusamus ab itaque quo.
-            </div>
-            <div className="flex space-x-40 mt-4">
-              <div className="text-gray-400 ml-5 font-semibold text-0.5x1">
-                Feb-2021 to Mar-2021
-              </div>
-              <button className="bg-violet-700 p-2 pl-5 pr-5 rounded-lg text-white">
-                Approve
-              </button>
-            </div>
-          </div>
+        <div className="grid grid-cols-2 gap-4 mb-4">
+            {items.map((item) => {
+              return (
+                <div key={item.id}>
+                  <LeaveCard
+                    name={item.name}
+                    designation="Designer"
+                    text={item.body}
+                    date="Feb-2021 to Mar-2021"
+                  />
+                </div>
+               );
+            })}
         </div>
 
         {/* Card for leaves end */}

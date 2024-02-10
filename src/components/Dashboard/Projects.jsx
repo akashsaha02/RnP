@@ -6,7 +6,6 @@ import ProjectItem from '../Common/ProjectItem'
 import ReactPaginate from 'react-paginate'
 
 const Projects = () => {
-  // Sample data for projects
   const [tasks, setTasks] = useState([
     {
       "id": 1,
