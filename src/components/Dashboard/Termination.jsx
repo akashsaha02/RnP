@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import LeaveCard from "../Common/LeaveCard";
+import TerminationItem from "../Common/TerminationItem";
 import ReactPaginate from "react-paginate";
 
 const Termination = () => {
@@ -77,13 +77,13 @@ const Termination = () => {
           </p>
         </div>
 
-        {/* Card for leaves starts */}
+        {/* Card for Termination starts */}
 
         <div className="grid grid-cols-2 gap-4 mb-4">
             {items.map((item) => {
               return (
                 <div key={item.id}>
-                  <LeaveCard
+                  <TerminationItem
                     name={item.name}
                     designation="Designer"
                     text={item.body}
@@ -94,7 +94,7 @@ const Termination = () => {
             })}
         </div>
 
-        {/* Card for leaves end */}
+        {/* Card for Termination end */}
 
         {/* Pagination starts */}
       </div>
