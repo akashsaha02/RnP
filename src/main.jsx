@@ -16,6 +16,10 @@ import Jobs from './components/Dashboard/Jobs.jsx'
 import Chat from './components/Dashboard/Chat.jsx'
 import Activity from './components/Dashboard/Activity.jsx'
 import Settings from './components/Dashboard/Settings.jsx'
+import AccountSetting from './components/Dashboard/AccountSetting.jsx'
+import EditProfile from './components/Dashboard/EditProfile.jsx'
+import ChangePassword from './components/Dashboard/ChangePassword.jsx'
+import DeleteAccount from './components/Dashboard/DeleteAccount.jsx'
 
 
 
@@ -94,10 +98,40 @@ const router = createBrowserRouter([
           <Sidebar />,
           <Settings />
         ]
+      },
+      {
+        path: 'account-settings',
+        element: [
+          <Sidebar />,
+          <AccountSetting />
+        ],
+      },
+      {
+        path: 'edit-profile',
+        element: [
+          <Sidebar />,
+          <EditProfile />
+        ]
+      },
+      {
+        path: 'change-password',
+        element: [
+          <Sidebar />,
+          <ChangePassword />
+        ]
+      },
+      {
+        path: 'delete-account',
+        element: [
+          <Sidebar />,
+          <DeleteAccount />
+        ]
       }
-
     ]
-  }
+  },
+
+
+
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
 
