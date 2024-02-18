@@ -13,13 +13,13 @@ import Projects from './components/Dashboard/Projects.jsx'
 import Termination from './components/Dashboard/Termination.jsx'
 import Internship from './components/Dashboard/Internship.jsx'
 import Jobs from './components/Dashboard/Jobs.jsx'
-import Chat from './components/Dashboard/Chat.jsx'
 import Activity from './components/Dashboard/Activity.jsx'
 import Settings from './components/Dashboard/Settings.jsx'
 import AccountSetting from './components/Dashboard/AccountSetting.jsx'
 import EditProfile from './components/Dashboard/EditProfile.jsx'
 import ChangePassword from './components/Dashboard/ChangePassword.jsx'
 import DeleteAccount from './components/Dashboard/DeleteAccount.jsx'
+import Contact from './components/Dashboard/Contact.jsx'
 
 
 
@@ -79,10 +79,10 @@ const router = createBrowserRouter([
         ]
       },
       {
-        path: 'chat',
+        path: 'contact-us',
         element: [
           <Sidebar />,
-          <Chat />
+          <Contact />
         ]
       },
       {
