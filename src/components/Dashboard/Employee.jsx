@@ -45,7 +45,7 @@ const Employee = () => {
     return (
         <div className="p-4 sm:ml-64">
             <div className="p-4 border-2 bg-slate-200 border-gray-200 rounded-lg">
-                <div className="grid grid-cols-3 gap-4 mb-4">
+                <div className="grid grid-cols-3 gap-4 mb-4 max-lg:grid-cols-2 max-sm:grid-cols-1">
                     {items.map((item) => {
                         return (
                             <div key={item.id}>
