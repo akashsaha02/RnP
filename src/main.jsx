@@ -20,6 +20,7 @@ import EditProfile from './components/Dashboard/EditProfile.jsx'
 import ChangePassword from './components/Dashboard/ChangePassword.jsx'
 import DeleteAccount from './components/Dashboard/DeleteAccount.jsx'
 import Contact from './components/Dashboard/Contact.jsx'
+import Error from './components/Error/Error.jsx'
 
 
 
@@ -126,9 +127,15 @@ const router = createBrowserRouter([
           <Sidebar />,
           <DeleteAccount />
         ]
-      }
+      },
+
     ]
-  },
+  }, {
+    path: 'error',
+    element: [
+      <Error />
+    ]
+  }
 
 
 
