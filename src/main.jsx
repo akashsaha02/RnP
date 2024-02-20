@@ -128,18 +128,19 @@ const router = createBrowserRouter([
           <DeleteAccount />
         ]
       },
+      {
+        path: 'applynow',
+        element: [
+          <Sidebar/>,
+          <Applynow />
+        ]
+      }
 
     ]
   }, {
     path: 'error',
     element: [
       <Error />
-    ]
-  }, {
-    path: 'applynow',
-    element: [
-      <Sidebar/>,
-      <Applynow />
     ]
   }
 ])
