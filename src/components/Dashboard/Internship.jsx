@@ -1,7 +1,7 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import JobItem from "../Common/JobItem";
 import ReactPaginate from "react-paginate";
-
+import { Link } from "react-router-dom";
 const Internship = () => {
   const [pageCount, setpageCount] = useState(0);
   const [items, setItems] = useState([]);
@@ -49,23 +49,25 @@ const Internship = () => {
 
       {/* Heading ends  */}
 
+      
+
       {/* Open Internship positions section starts*/}
 
       <div className="flex">
         <div className="mr-5">
-        <div className="bg-white mt-10 rounded-lg flex justify-between">
-        <p className="font-semibold p-1 pl-3">Open</p>
-        <svg
-          className="pt-1 pr-2 cursor-pointer"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" />
-        </svg>
-      </div>
-      {items.map((item) => {
+          <div className="bg-white mt-14 rounded-lg flex justify-between">
+            <p className="font-semibold p-1 pl-3">Open</p>
+            <svg
+              className="pt-1 pr-2 cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" />
+            </svg>
+          </div>
+          {items.map((item) => {
             return (
               <div key={item.id}>
                 <JobItem
@@ -83,19 +85,19 @@ const Internship = () => {
         {/* Closed Internship position starts */}
 
         <div className="mr-5">
-        <div className="bg-white mt-10 rounded-lg flex justify-between">
-        <p className="font-semibold p-1 pl-3">Closed</p>
-        <svg
-          className="pt-1 pr-2 cursor-pointer"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" />
-        </svg>
-      </div>
-      {items.map((item) => {
+          <div className="bg-white mt-14 rounded-lg flex justify-between">
+            <p className="font-semibold p-1 pl-3">Closed</p>
+            <svg
+              className="pt-1 pr-2 cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" />
+            </svg>
+          </div>
+          {items.map((item) => {
             return (
               <div key={item.id}>
                 <JobItem
@@ -113,19 +115,19 @@ const Internship = () => {
         {/* Under review Internship position starts */}
 
         <div className="mr-10">
-        <div className="bg-white mt-10 rounded-lg flex justify-between">
-        <p className="font-semibold p-1 pl-3">Under review</p>
-        <svg
-          className="pt-1 pr-2 cursor-pointer"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" />
-        </svg>
-      </div>
-      {items.map((item) => {
+          <div className="bg-white mt-14 rounded-lg flex justify-between">
+            <p className="font-semibold p-1 pl-3">Under review</p>
+            <svg
+              className="pt-1 pr-2 cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" />
+            </svg>
+          </div>
+          {items.map((item) => {
             return (
               <div key={item.id}>
                 <JobItem

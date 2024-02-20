@@ -21,7 +21,7 @@ import ChangePassword from './components/Dashboard/ChangePassword.jsx'
 import DeleteAccount from './components/Dashboard/DeleteAccount.jsx'
 import Contact from './components/Dashboard/Contact.jsx'
 import Error from './components/Error/Error.jsx'
-
+import Applynow from './components/Applynow/Applynow.jsx'
 
 
 const router = createBrowserRouter([
@@ -135,10 +135,13 @@ const router = createBrowserRouter([
     element: [
       <Error />
     ]
+  }, {
+    path: 'applynow',
+    element: [
+      <Sidebar/>,
+      <Applynow />
+    ]
   }
-
-
-
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
 
