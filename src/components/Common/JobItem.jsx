@@ -3,7 +3,7 @@ const JobItem=({employee_salary,position,date})=>{
     return(
         <>
         
-      <div className="bg-white mt-10 h-60 w-80 p-5">
+      <div className="bg-white mt-10 h-60 w-80 p-5 rounded-lg">
         <div className="flex justify-between">
           <p className="pl-3">{position}</p>
           <svg
