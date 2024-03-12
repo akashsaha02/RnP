@@ -47,6 +47,8 @@ export default {
         'Noto Color Emoji'
       ],
       plugins: [],
+    }, backgroundImage:{
+      'employeeBg':'url(./src/assets/background.png)'
     }
   }
 }

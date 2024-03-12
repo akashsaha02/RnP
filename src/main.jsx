@@ -13,7 +13,6 @@ import Projects from './components/Dashboard/Projects.jsx'
 import Termination from './components/Dashboard/Termination.jsx'
 import Internship from './components/Dashboard/Internship.jsx'
 import Jobs from './components/Dashboard/Jobs.jsx'
-import Activity from './components/Dashboard/Activity.jsx'
 import Settings from './components/Dashboard/Settings.jsx'
 import AccountSetting from './components/Dashboard/AccountSetting.jsx'
 import EditProfile from './components/Dashboard/EditProfile.jsx'
@@ -22,6 +21,7 @@ import DeleteAccount from './components/Dashboard/DeleteAccount.jsx'
 import Contact from './components/Dashboard/Contact.jsx'
 import Error from './components/Error/Error.jsx'
 import Applynow from './components/Applynow/Applynow.jsx'
+import EmployeeDetails from './components/Dashboard/EmployeeDetails.jsx'
 
 
 const router = createBrowserRouter([
@@ -87,13 +87,6 @@ const router = createBrowserRouter([
         ]
       },
       {
-        path: 'activity',
-        element: [
-          <Sidebar />,
-          <Activity />
-        ]
-      },
-      {
         path: 'settings',
         element: [
           <Sidebar />,
@@ -131,8 +124,15 @@ const router = createBrowserRouter([
       {
         path: 'applynow',
         element: [
-          <Sidebar/>,
+          <Sidebar />,
           <Applynow />
+        ]
+      },
+      {
+        path: 'employee-details',
+        element: [
+          <Sidebar />,
+          <EmployeeDetails />
         ]
       }
 
@@ -143,6 +143,7 @@ const router = createBrowserRouter([
       <Error />
     ]
   }
+
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
 
