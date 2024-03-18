@@ -7,7 +7,7 @@ const Sidebar = () => {
         className="fixed left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
-        <div className="h-full px-3 py-4 overflow-y-auto bg-primary-800">
+        <div className="px-3 py-4 h-full overflow-y-auto bg-primary-800">
           <ul className="space-y-2 font-medium">
             {/* Dashboard Start */}
             <li>
@@ -192,7 +192,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/contact-us"
-                className="flex items-center p-2 mt-10 text-white rounded-lg hover:bg-primary-600 hover:rounded-3xl group focus:bg-primary-600 focus:rounded-3xl group"
+                className="flex items-center p-2 text-white rounded-lg hover:bg-primary-600 hover:rounded-3xl group focus:bg-primary-600 focus:rounded-3xl group"
               >
                 <svg
                   className="w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white"
@@ -263,7 +263,7 @@ const Sidebar = () => {
             </li>
             {/* Error ENd */}
 
-            {/* Internship landing page Start */}
+            {/* Employee details page Start */}
             <li>
               <Link
                 to="/employee-details"
@@ -286,8 +286,7 @@ const Sidebar = () => {
                 <span className="ms-3">Employee Details</span>
               </Link>
             </li>
-            {/* Internship landing page end */}
-
+            {/* Employee details page end */}
           </ul>
         </div>
       </aside>
