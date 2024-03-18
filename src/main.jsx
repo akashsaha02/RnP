@@ -24,6 +24,7 @@ import Applynow from './components/Applynow/Applynow.jsx'
 import EmployeeDetails from './components/Dashboard/EmployeeDetails.jsx'
 
 
+
 const router = createBrowserRouter([
   {
     path: '/',
