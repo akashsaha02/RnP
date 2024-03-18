@@ -49,13 +49,24 @@ const Jobs = () => {
 
       {/* Heading ends  */}
 
-      {/* Open job positions section starts*/}
-      <div className="flex justify-center items center">
+      {/* Dropdown starts*/}
 
+      <div className="mt-3 text-sm">
+        <select className="p-1">
+          <option>Select Domain</option>
+          <option value="WEB DEV">Web Dev</option>
+          <option value="APP DEV">App Dev</option>
+        </select>
+      </div>
+
+      {/* Dropdown ends */}
+
+      {/* Open job positions section starts*/}
+      <div className="">
         <div className="flex">
-          <div className="mr-5">
-            <div className="bg-white mt-10 rounded-lg flex justify-between">
-              <p className="font-semibold p-1 pl-3">Open</p>
+          <div className="">
+            <div className="bg-white mt-10 rounded-lg w-60 flex justify-between">
+              <p className="font-semibold p-1">Open</p>
               <svg
                 className="pt-1 pr-2 cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,24 +77,27 @@ const Jobs = () => {
                 <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z" />
               </svg>
             </div>
-
-            {items.map((item) => {
-              return (
-                <div key={item.id}>
-                  <JobItem
-                    position="Tester"
-                    employee_salary="8700"
-                    date="2 March 2021, 12:30pm"
-                  />
-                </div>
-              );
-            })}
+            <div className="flex flex-row">
+              {items.map((item) => {
+                return (
+                  <div key={item.id} className="mr-5">
+                    <JobItem
+                      position="Tester"
+                      employee_salary="8700"
+                      date="2 March 2021, 12:30pm"
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
+        </div>
+      </div>
 
-          {/* Open job position ends */}
+      {/* Open job position ends */}
 
-          {/* Closed job position starts */}
-
+      {/* Closed job position starts */}
+      {/* 
           <div className="mr-5">
             <div className="bg-white mt-10 rounded-lg flex justify-between">
               <p className="font-semibold p-1 pl-3">Closed</p>
@@ -108,13 +122,13 @@ const Jobs = () => {
                 </div>
               );
             })}
-          </div>
+          </div> */}
 
-          {/* Closed job position ends */}
+      {/* Closed job position ends */}
 
-          {/* Under review job position starts */}
+      {/* Under review job position starts */}
 
-          <div className="mr-10">
+      {/* <div className="mr-10">
             <div className="bg-white mt-10 rounded-lg flex justify-between">
               <p className="font-semibold p-1 pl-3">Under review</p>
               <svg
@@ -138,10 +152,8 @@ const Jobs = () => {
                 </div>
               );
             })}
-          </div>
-          {/* Under review job position ends */}
-        </div>
-      </div>
+          </div> */}
+      {/* Under review job position ends */}
       <div className="flex justify-center items-center">
         <ReactPaginate
           previousLabel={"previous"}
@@ -165,7 +177,8 @@ const Jobs = () => {
           breakLinkClassName={
             "flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-blue-100 hover:text-blue-700 "
           }
-        /></div>
+        />
+      </div>
     </div>
   );
 };
