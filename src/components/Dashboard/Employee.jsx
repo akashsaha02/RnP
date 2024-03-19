@@ -1,80 +1,80 @@
-import React, { useState, useEffect } from 'react'
-
+import { useState } from 'react'
 import EmployeeCard from "../Common/EmployeeCard"
-import ReactPaginate from "react-paginate";
 
 const Employee = () => {
-    const [items, setItems] = useState([]);
+    // Demo data for Employee
+    const [items, setItems] = useState([
+        {
+            'name': 'Bodhisatta Bhattacharjee',
+            'employeeID': 'RNPW/2024-25/WEB007DEV',
+            'email': '2109999@kiit.ac.in',
+            'progress': 4,
+            'projectLink': 'https://github.com/'
 
-    const [pageCount, setpageCount] = useState(0);
+        },
+        {
+            'name': 'Sakshi Mohan',
+            'employeeID': 'RNPW/2024-25/WEB008DEV',
+            'email': '2109999@kiit.ac.in',
+            'progress': 4,
+            'projectLink': 'https://github.com/'
 
-    let limit = 10;
+        },
+        {
+            'name': 'Akash Saha',
+            'employeeID': 'RNPW/2024-25/WEB009DEV',
+            'email': '2109999@kiit.ac.in',
+            'progress': 4,
+            'projectLink': 'https://github.com/'
 
-    useEffect(() => {
-        const getEmployees = async () => {
-            const res = await fetch(
-                //custom api call
-                `https://jsonplaceholder.typicode.com/comments?_page=1&_limit=${limit}`
-            );
-            const data = await res.json();
-            const total = res.headers.get("x-total-count");
-            setpageCount(Math.ceil(total / limit));
-            // console.log(Math.ceil(total/12));
-            setItems(data);
-        };
-
-        getEmployees();
-    }, [limit]);
-
-    const fetchEmployees = async (currentPage) => {
-        const res = await fetch(
-            //custom api call
-            `https://jsonplaceholder.typicode.com/comments?_page=${currentPage}&_limit=${limit}`
-        );
-        const data = await res.json();
-        return data;
-    };
-
-    const handlePageClick = async (data) => {
-        console.log(data);
-        let currentPage = data.selected + 1;
-        const employyesFormServer = await fetchEmployees(currentPage);
-        setItems(employyesFormServer);
-    }
+        }
+    ]);
 
     return (
         <div className="p-4 sm:ml-64">
-            <div className="p-4 border-2 bg-slate-200 border-gray-200 rounded-lg">
-                <div className="grid grid-cols-3 gap-4 mb-4 max-lg:grid-cols-2 max-sm:grid-cols-1">
+            {/* Title Details */}
+            <div className="p-4 border-2 bg-gray-100 border-gray-200 rounded-lg">
+                <div>
+                    <h1 className="text-3xl font-bold text-center mb-8 mt-4">Employees</h1>
+                    {/* Employee Card  Heading*/}
+                    <div className="grid grid-cols-5 gap-5 bg-primary-600 text-white shadow-gray-300 shadow-xl rounded-t-lg p-6 w-full">
+                        <div className='flex justify-center items-center'>
+                            <h2 className="text-xl font-bold">Name</h2>
+                        </div>
+                        <div className='flex justify-center items-center'>
+                            <h2 className="text-xl font-bold">Employee ID</h2>
+                        </div>
+                        <div className='flex justify-center items-center'>
+                            <h2 className="text-xl font-bold">Email</h2>
+                        </div>
+                        <div className='flex justify-center items-center'>
+                            <h2 className="text-xl font-bold">Progress</h2>
+                        </div>
+                        <div className='flex justify-center items-center'>
+                            <h2 className="text-xl font-bold">Project</h2>
+                        </div>
+                    </div>
+                </div>
+                {/* Employee Cards mapped to display*/}
+                <div className="">
                     {items.map((item) => {
                         return (
                             <div key={item.id}>
-                                <EmployeeCard name={item.name} date="21 February, 2020" role="Product Designer" mobile="+91 1122334455" email={item.email} />
+                                <EmployeeCard
+                                    key={item.employeeID}
+                                    name={item.name}
+                                    employeeID={item.employeeID}
+                                    email={item.email}
+                                    progress={item.progress}
+                                    link={item.projectLink}
+                                />
                             </div>
                         );
                     })}
                 </div>
-
-            </div>
-            <div className='flex justify-center items-center'>
-                <ReactPaginate
-                    previousLabel={"previous"}
-                    nextLabel={"next"}
-                    breakLabel={"..."}
-                    pageCount={pageCount}
-                    marginPagesDisplayed={2}
-                    pageRangeDisplayed={3}
-                    onPageChange={handlePageClick}
-                    containerClassName={"inline-flex -space-x-px text-sm justify-content-center items-center mt-4 mb-4"}
-                    pageLinkClassName={"flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-blue-100 hover:text-blue-700 focus:bg-blue-100 focus:text-blue-700"}
-                    previousLinkClassName={"flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-blue-100 hover:text-blue-700"}
-                    nextClassName={"page-item"}
-                    nextLinkClassName={"flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-blue-100 hover:text-blue-700"}
-                    breakLinkClassName={"flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-blue-100 hover:text-blue-700 "}
-                />
             </div>
         </div>
     )
 }
 
-export default Employee
+export default Employee;
