@@ -22,6 +22,8 @@ import Contact from './components/Dashboard/Contact.jsx'
 import Error from './components/Error/Error.jsx'
 import Applynow from './components/Applynow/Applynow.jsx'
 import EmployeeDetails from './components/Dashboard/EmployeeDetails.jsx'
+import PdfViewer from './components/Dashboard/PdfViewer.jsx'
+import Certificate from './components/Dashboard/Certificate.jsx'
 
 
 
@@ -134,6 +136,20 @@ const router = createBrowserRouter([
         element: [
           <Sidebar />,
           <EmployeeDetails />
+        ]
+      },
+      {
+        path: 'pdf-viewer',
+        element: [
+          <Sidebar />,
+          <PdfViewer />
+        ]
+      },
+      {
+        path: 'certificate',
+        element: [
+          <Sidebar />,
+          <Certificate />
         ]
       }
 
