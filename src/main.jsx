@@ -24,6 +24,7 @@ import Applynow from './components/Applynow/Applynow.jsx'
 import EmployeeDetails from './components/Dashboard/EmployeeDetails.jsx'
 import PdfViewer from './components/Dashboard/PdfViewer.jsx'
 import Certificate from './components/Dashboard/Certificate.jsx'
+import ProjectDetails from './components/Dashboard/ProjectDetails.jsx'
 
 
 
@@ -150,6 +151,13 @@ const router = createBrowserRouter([
         element: [
           <Sidebar />,
           <Certificate />
+        ]
+      },
+      {
+        path: 'project-details',
+        element: [
+          <Sidebar />,
+          <ProjectDetails/>
         ]
       }
 
