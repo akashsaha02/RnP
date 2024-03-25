@@ -1,6 +1,80 @@
-import React from 'react'
-
+import { useState } from 'react'
 const EditProfile = () => {
+    // State to hold form data
+    const [form, setForm] = useState({
+        name: '',
+        number: '',
+        email: '',
+        bio: '',
+    });
+    // State to hold form errors
+    const [errors, setErrors] = useState({});
+    // Function to validate form fields
+    const validate = (field, value) => {
+        return new Promise((resolve) => {
+            setErrors((prevErrors) => {
+                let errors = { ...prevErrors };
+                if (field === 'name' || field === 'bio') {
+                    if (!value.trim()) {
+                        errors[field] = 'This field cannot be empty';
+                    } else {
+                        delete errors[field];
+                    }
+                }
+                if (field === 'number') {
+                    if (value.length !== 10) {
+                        errors[field] = 'Enter a valid phone number';
+                    } else {
+                        delete errors[field];
+                    }
+                }
+                if (field === 'email') {
+                    if (!value.includes('@')) {
+                        errors[field] = 'Enter a valid email address';
+                    } else {
+                        delete errors[field];
+                    }
+                }
+                resolve(errors);
+                return errors;
+            });
+        });
+    }
+    // Function to handle form field changes
+    const handleChange = (event) => {
+        setForm({
+            ...form,
+            [event.target.id]: event.target.value,
+        });
+        validate(event.target.id, event.target.value);
+    }
+    const handleBlur = (event) => {
+        validate(event.target.id, event.target.value);
+    }
+    // Function to handle form submission
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const errorList = await Promise.all([
+            validate('name', form.name),
+            validate('number', form.number),
+            validate('email', form.email),
+            validate('bio', form.bio),
+        ]);
+        const newErrors = errorList.reduce((acc, curr) => ({ ...acc, ...curr }), {});
+        if (Object.keys(newErrors).length === 0) {
+            alert('Form submitted');
+        }
+    }
+    // Function to handle form cancel button
+    const handleCancel = () => {
+        setForm({
+            name: '',
+            number: '',
+            email: '',
+            bio: '',
+        });
+        setErrors({});
+    }
     return (
         <div className="p-4 sm:ml-64">
             <div className="p-4 border-2 border-gray-200 rounded-lg dark:border-gray-700">
@@ -21,7 +95,12 @@ const EditProfile = () => {
                                     type="text"
                                     id="name"
                                     className="block w-full pl-10 h-10 mt-1 bg-blue-100 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                    value={form.name}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
                                 />
+                                {/* Error field for name */}
+                                {errors.name && <p className=' text-red-600'>{errors.name}</p>}
                                 <svg
                                     className='absolute left-4 top-10 h-4 w-4 text-gray-400'
                                     fill="#0d0d0d" width="24" height="24" viewBox="0 0 24 24" id="user" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg"><path id="primary" d="M21,20a2,2,0,0,1-2,2H5a2,2,0,0,1-2-2,6,6,0,0,1,6-6h6A6,6,0,0,1,21,20Zm-9-8A5,5,0,1,0,7,7,5,5,0,0,0,12,12Z" fill="#0d0d0d" /></svg>
@@ -33,7 +112,13 @@ const EditProfile = () => {
                                     type="number"
                                     id="number"
                                     className="block w-full h-10 mt-1 bg-blue-100 pl-10 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                    value={form.number}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
                                 />
+                                {/* Error field for number */}
+                                {errors.number && <p className=' text-red-600'>{errors.number}</p>}
+
                                 <svg
                                     className=" absolute left-4 top-10 h-4 w-4 text-gray-400"
 
@@ -47,7 +132,12 @@ const EditProfile = () => {
                                 type="email"
                                 id="email"
                                 className="block w-full h-10 mt-1 pl-10 bg-blue-100 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                value={form.email}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
                             />
+                            {/* Error field for email */}
+                            {errors.email && <p className=' text-red-600'>{errors.email}</p>}
                             <svg
                                 className=' absolute left-4 top-10 h-4 w-4 text-gray-400'
                                 width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm3.519 0L12 11.671 18.481 6H5.52zM20 7.329l-7.341 6.424a1 1 0 0 1-1.318 0L4 7.329V18h16V7.329z" fill="#0D0D0D" /></svg>
@@ -71,14 +161,21 @@ const EditProfile = () => {
                                 id="bio"
                                 rows="6"
                                 className="block p-2 w-full mt-1 bg-blue-100 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                            ></textarea>
+                                value={form.bio}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                            />
+                            {/* Error field for bio */}
+                            {errors.bio && <p className=' text-red-600'>{errors.bio}</p>}
                         </div>
                         {/* Save and Cancel Buttons */}
                         <div className="mt-5 flex justify-end">
-                            <button className="px-6 py-2 mr-2 border-black-100 text-black rounded-md shadow hover:bg-gray-100">
+                            <button className="px-6 py-2 mr-2 border-black-100 text-black rounded-md shadow hover:bg-gray-100"
+                                onClick={handleCancel}>
                                 Cancel
                             </button>
-                            <button className="px-6 py-2 bg-blue-500 text-white rounded-md shadow hover:bg-gray-600">
+                            <button className="px-6 py-2 bg-blue-500 text-white rounded-md shadow hover:bg-gray-600"
+                                onClick={handleSubmit}>
                                 Save
                             </button>
                         </div>
