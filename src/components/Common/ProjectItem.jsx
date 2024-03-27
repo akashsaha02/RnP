@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 const ProjectItem = ({ task, deleteTask, editTask, toggleCompleted }) => {
     // State defined for editing the project details
+    const [fileKey, setFileKey] = useState(Date.now());
     const [isEditing, setIsEditing] = useState(false);
     const [editedProjectName, setEditedProjectName] = useState(task.text);
     const [editedProjectDescription, setEditedProjectDescription] = useState(task.projectDescription);
@@ -9,6 +10,11 @@ const ProjectItem = ({ task, deleteTask, editTask, toggleCompleted }) => {
     const [editedProjectType, setEditedProjectType] = useState(task.selectedOption);
     const [editedStartDate, setEditedStartDate] = useState(task.startDate);
     const [editedEndDate, setEditedEndDate] = useState(task.endDate);
+    const [editedPdfFile, setEditedPdfFile] = useState(task.selectedFile);
+    const [editedEmployee, setEditedEmployee] = useState(task.employee);
+
+    console.log(task.employee)
+
 
     // Function to handle the save button click
     function handleSaveClick() {
@@ -19,6 +25,8 @@ const ProjectItem = ({ task, deleteTask, editTask, toggleCompleted }) => {
             selectedOption: editedProjectType,
             startDate: editedStartDate,
             endDate: editedEndDate,
+            selectedFile: editedPdfFile,
+            employee: editedEmployee,
         });
         setIsEditing(false);
     }
@@ -40,9 +48,12 @@ const ProjectItem = ({ task, deleteTask, editTask, toggleCompleted }) => {
                 <div className="bg-gray-100 border-primary-700 border-2 mb-4 rounded-lg overflow-hidden">
                     <div className="p-5">
                         {/* Project Title */}
-                        <h2 className="text-xl font-bold mb-2">{task.text}</h2>
+                        <h2 className="text-xl font-bold mb-3">{task.text}</h2>
                         {/* Project Description */}
-                        <p className="text-gray-600 mb-4">{task.projectDescription}</p>
+                        <p className="text-gray-700 mb-3"><span className='text-black font-semibold'>Description: </span>{task.projectDescription}</p>
+                        {/* Employee Name */}
+                        <p className="text-gray-700 mb-4"><span className='text-black font-semibold'>Team: </span>{task.employee}</p>
+                        {/* Project Type and Link */}
                         <div className='flex items-center '>
                             {/* Project Type */}
                             <p className="text-white font-semibold text-xs mb-4 mr-2 bg-primary-600 px-3 py-1 rounded-full">{task.selectedOption}</p>
@@ -72,6 +83,7 @@ const ProjectItem = ({ task, deleteTask, editTask, toggleCompleted }) => {
                         </div>
                         {/* PDF File need to complete the backend*/}
                         <p className="text-gray-600 mb-4">{task.setPdfFile}</p>
+
                         {/* Edit and Delete Button */}
                         <div className="flex justify-between items-center">
                             <button
@@ -109,6 +121,13 @@ const ProjectItem = ({ task, deleteTask, editTask, toggleCompleted }) => {
                         onChange={(e) => setEditedProjectDescription(e.target.value)}
                         className="mt-2 block w-full px-3 py-2 border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
+                    {/* Employee Name edit input box */}
+                    <textarea
+                        value={editedEmployee}
+                        placeholder='Enter team details'
+                        onChange={(e) => setEditedEmployee(e.target.value)}
+                        className="mt-2 block w-full px-3 py-2 border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
                     {/* Project Link edit input box */}
                     <input
                         type="text"
@@ -118,15 +137,29 @@ const ProjectItem = ({ task, deleteTask, editTask, toggleCompleted }) => {
                         className="mt-2 block w-full px-3 py-2 border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                     {/* Project Type edit input box */}
-                    <select
-                        value={editedProjectType}
-                        onChange={(e) => setEditedProjectType(e.target.value)}
-                        className="mt-2 block w-full px-3 py-2 border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    >
-                        <option value="Web-Development">Web Development</option>
-                        <option value="App-Development">App Development</option>
-                        <option value="Machine-Learning">Machine Learning</option>
-                    </select>
+                    <div className='flex justify-center gap-2'>
+                        <select
+                            value={editedProjectType}
+                            onChange={(e) => setEditedProjectType(e.target.value)}
+                            className="mt-2 block w-full px-3 py-2 border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        >
+                            <option value="Web-Development">Web Development</option>
+                            <option value="App-Development">App Development</option>
+                            <option value="Machine-Learning">Machine Learning</option>
+                        </select>
+                        <input
+                            key={fileKey}
+                            type="file"
+                            className="mt-2 block w-full px-3 py-2 bg-white border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            placeholder="Upload PDF File"
+                            name="file"
+                            value={editedPdfFile}
+                            onChange={(e) => {
+                                setEditedPdfFile(e.target.files[0])
+                                setFileKey(Date.now())
+                            }}
+                        />
+                    </div>
                     {/* Project Start and End Date edit input box */}
                     <div className='flex justify-center items-center gap-2'>
                         <input

@@ -7,16 +7,16 @@ import ProjectItem from '../Common/ProjectItem'
 const Projects = () => {
   // Demo Item
   const [tasks, setTasks] = useState([
-    { 'id': 1, 'text': 'Task 1', 'projectDescription': 'Description 1', 'selectedOption': 'App-Development', 'startDate': '2024/02/11', 'endDate': '2024/02/11', 'selectedFile': null, 'link': 'http://example.com/1' },
-    { 'id': 2, 'text': 'Task 2', 'projectDescription': 'Description 2', 'selectedOption': 'App-Development', 'startDate': '2024/02/12', 'endDate': '2024/02/12', 'selectedFile': null, 'link': 'http://example.com/2' },
-    { 'id': 3, 'text': 'Task 3', 'projectDescription': 'Description 3', 'selectedOption': 'App-Development', 'startDate': '2024/02/13', 'endDate': '2024/02/13', 'selectedFile': null, 'link': 'http://example.com/3' },
-    { 'id': 4, 'text': 'Task 4', 'projectDescription': 'Description 4', 'selectedOption': 'Web-Development', 'startDate': '2024/02/14', 'endDate': '2024/02/14', 'selectedFile': null, 'link': 'http://example.com/4' },
-    { 'id': 5, 'text': 'Task 5', 'projectDescription': 'Description 5', 'selectedOption': 'Web-Development', 'startDate': '2024/02/15', 'endDate': '2024/02/15', 'selectedFile': null, 'link': 'http://example.com/5' },
-    { 'id': 6, 'text': 'Task 6', 'projectDescription': 'Description 6', 'selectedOption': 'Web-Development', 'startDate': '2024/02/16', 'endDate': '2024/02/16', 'selectedFile': null, 'link': 'http://example.com/6' },
-    { 'id': 7, 'text': 'Task 7', 'projectDescription': 'Description 7', 'selectedOption': 'Machine-Learning', 'startDate': '2024/02/17', 'endDate': '2024/02/17', 'selectedFile': null, 'link': 'http://example.com/7' },
-    { 'id': 8, 'text': 'Task 8', 'projectDescription': 'Description 8', 'selectedOption': 'Machine-Learning', 'startDate': '2024/02/18', 'endDate': '2024/02/18', 'selectedFile': null, 'link': 'http://example.com/8' },
-    { 'id': 9, 'text': 'Task 9', 'projectDescription': 'Description 9', 'selectedOption': 'Machine-Learning', 'startDate': '2024/02/19', 'endDate': '2024/02/19', 'selectedFile': null, 'link': 'http://example.com/9' },
-    { 'id': 10, 'text': 'Task 10', 'projectDescription': 'Description 10', 'selectedOption': 'Machine-Learning', 'startDate': '2024/02/20', 'endDate': '2024/02/20', 'selectedFile': null, 'link': 'http://example.com/10' },
+    { 'id': 1, 'text': 'Task 1', 'projectDescription': 'Description 1', 'selectedOption': 'App-Development', 'startDate': '2024/02/11', 'endDate': '2024/02/11', 'selectedFile': null, 'link': 'http://example.com/1', 'employee': 'John Doe' },
+    { 'id': 2, 'text': 'Task 2', 'projectDescription': 'Description 2', 'selectedOption': 'App-Development', 'startDate': '2024/02/12', 'endDate': '2024/02/12', 'selectedFile': null, 'link': 'http://example.com/2', 'employee': 'John Doe' },
+    { 'id': 3, 'text': 'Task 3', 'projectDescription': 'Description 3', 'selectedOption': 'App-Development', 'startDate': '2024/02/13', 'endDate': '2024/02/13', 'selectedFile': null, 'link': 'http://example.com/3', 'employee': 'John Doe' },
+    { 'id': 4, 'text': 'Task 4', 'projectDescription': 'Description 4', 'selectedOption': 'Web-Development', 'startDate': '2024/02/14', 'endDate': '2024/02/14', 'selectedFile': null, 'link': 'http://example.com/4', 'employee': 'John Doe' },
+    { 'id': 5, 'text': 'Task 5', 'projectDescription': 'Description 5', 'selectedOption': 'Web-Development', 'startDate': '2024/02/15', 'endDate': '2024/02/15', 'selectedFile': null, 'link': 'http://example.com/5', 'employee': 'John Doe' },
+    { 'id': 6, 'text': 'Task 6', 'projectDescription': 'Description 6', 'selectedOption': 'Web-Development', 'startDate': '2024/02/16', 'endDate': '2024/02/16', 'selectedFile': null, 'link': 'http://example.com/6', 'employee': 'John Doe' },
+    { 'id': 7, 'text': 'Task 7', 'projectDescription': 'Description 7', 'selectedOption': 'Machine-Learning', 'startDate': '2024/02/17', 'endDate': '2024/02/17', 'selectedFile': null, 'link': 'http://example.com/7', 'employee': 'John Doe' },
+    { 'id': 8, 'text': 'Task 8', 'projectDescription': 'Description 8', 'selectedOption': 'Machine-Learning', 'startDate': '2024/02/18', 'endDate': '2024/02/18', 'selectedFile': null, 'link': 'http://example.com/8', 'employee': 'John Doe' },
+    { 'id': 9, 'text': 'Task 9', 'projectDescription': 'Description 9', 'selectedOption': 'Machine-Learning', 'startDate': '2024/02/19', 'endDate': '2024/02/19', 'selectedFile': null, 'link': 'http://example.com/9', 'employee': 'John Doe' },
+    { 'id': 10, 'text': 'Task 10', 'projectDescription': 'Description 10', 'selectedOption': 'Machine-Learning', 'startDate': '2024/02/20', 'endDate': '2024/02/20', 'selectedFile': null, 'link': 'http://example.com/10', 'employee': 'John Doe' },
 
 
   ]);
@@ -28,6 +28,8 @@ const Projects = () => {
   const [endDate, setEndDate] = useState(new Date());
   const [selectedFile, setSelectedFile] = useState(null);
   const [link, setLink] = useState('');
+  const [employee, setEmployee] = useState('');
+
   // for searchbar defining states
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -35,7 +37,7 @@ const Projects = () => {
   const [filter, setFilter] = useState('all');
 
   //Add Projects function
-  function addTask(text, projectDescription, selectedOption, startDate, endDate, selectedFile, link) {
+  function addTask(text, projectDescription, selectedOption, startDate, endDate, selectedFile, link, employee) {
     const newTask = {
       id: Date.now(),
       text,
@@ -46,6 +48,7 @@ const Projects = () => {
       selectedFile,
       link,
       completed: false,
+      employee,
 
     };
     setTasks([...tasks, newTask]);
@@ -56,6 +59,7 @@ const Projects = () => {
     setEndDate([]);
     setSelectedFile(null);
     setLink('');
+    setEmployee('');
   }
 
   //Delete Project function 
@@ -88,7 +92,7 @@ const Projects = () => {
   const filteredTasks = tasks.filter(task => {
     const taskDate = new Date(task.startDate);
     const now = new Date();
-  
+
     switch (filter) {
       case 'day':
         return taskDate.toDateString() === now.toDateString();
@@ -148,6 +152,15 @@ const Projects = () => {
           </select>
           <br />
 
+          {/* Employee assign input field */}
+          <textarea
+            className='border-2 w-1/2 border-gray-200 rounded-lg px-3 py-1.5 mb-2 placeholder:text-gray-800'
+            value={employee}
+            placeholder='Enter Team Details'
+            onChange={(e) => setEmployee(e.target.value)}
+            required
+          /> <br />
+
           {/* Start and End Date */}
           <div className='flex justify-center gap-4 w-1/2'>
             <div className='w-1/2'>
@@ -196,7 +209,10 @@ const Projects = () => {
           /> <br />
           <button
             className='text-white w-1/2 bg-primary-600 border-2 hover:bg-white hover:text-primary-600 hover:border-primary-600 focus:ring-2 focus:ring-indigo-300 font-bold rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2'
-            onClick={() => { if (text && startDate && endDate) addTask(text, projectDescription, selectedOption, startDate, endDate, selectedFile, link) }}>Add Projects
+            onClick={() => {
+              if (text && startDate && endDate)
+                addTask(text, projectDescription, selectedOption, startDate, endDate, selectedFile, link, employee)
+            }}>Add Projects
           </button>
         </div>
         {/* Add Projects with start and end date */}
@@ -275,6 +291,7 @@ const Projects = () => {
                         selectedFile={task.selectedFile}
                         link={task.link}
                         toggleCompleted={toggleCompleted}
+                        editedEmployee={task.employee}
                       />
                     ))}
               </div>
