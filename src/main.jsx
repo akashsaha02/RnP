@@ -25,6 +25,8 @@ import EmployeeDetails from './components/Dashboard/EmployeeDetails.jsx'
 import PdfViewer from './components/Dashboard/PdfViewer.jsx'
 import Certificate from './components/Dashboard/Certificate.jsx'
 import ProjectDetails from './components/Dashboard/ProjectDetails.jsx'
+import NewJob from './components/Dashboard/NewJob.jsx'
+import EditJob from './components/Dashboard/EditJob.jsx'
 
 
 
@@ -158,6 +160,20 @@ const router = createBrowserRouter([
         element: [
           <Sidebar />,
           <ProjectDetails/>
+        ]
+      },
+      {
+        path: 'newJob',
+        element: [
+          <Sidebar />,
+          <NewJob/>
+        ]
+      },
+      {
+        path: 'editJob',
+        element: [
+          <Sidebar />,
+          <EditJob/>
         ]
       }
 

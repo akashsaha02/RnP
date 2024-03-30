@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import JobItem from "../Common/JobItem";
 import ReactPaginate from "react-paginate";
-
+import { Link } from "react-router-dom";
 const Jobs = () => {
   const [pageCount, setpageCount] = useState(0);
   const [items, setItems] = useState([]);
@@ -40,6 +40,33 @@ const Jobs = () => {
 
   return (
     <div className="p-4 sm:ml-64 bg-blue-50">
+      {/* Manage job settings start */}
+
+      <div className="bg-white rounded-lg mb-5 p-5">
+        <div className="text-center font-bold text-2xl">Manage Job Listing</div>
+        <div className="text-center m-3">
+          Add, edit, or remove jobs within your company
+        </div>
+        <div className="flex justify-center">
+          <div className="flex items-center">
+            <Link
+              to="/editJob"
+              className="text-black border border-black bg-white hover:bg-primary-700 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
+            >
+              Edit Existing Job
+            </Link>
+            <Link
+              to="/newJob"
+              className="text-white border border-black bg-primary-600 hover:bg-primary-700 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
+            >
+              Create New Jobs
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Manage job settings ends */}
+
       {/* Heading starts */}
 
       <div className="bg-white rounded-lg flex justify-between">
