@@ -25,6 +25,7 @@ import EmployeeDetails from './components/Dashboard/EmployeeDetails.jsx'
 import PdfViewer from './components/Dashboard/PdfViewer.jsx'
 import Certificate from './components/Dashboard/Certificate.jsx'
 import ProjectDetails from './components/Dashboard/ProjectDetails.jsx'
+import CertificateAdmin from './components/Dashboard/CertificateAdmin.jsx'
 
 
 
@@ -159,7 +160,13 @@ const router = createBrowserRouter([
           <Sidebar />,
           <ProjectDetails/>
         ]
-      }
+      },{
+        path: 'certificate-admin',
+        element: [
+          <Sidebar />,
+          <CertificateAdmin />
+        ]
+      },
 
     ]
   }, {
