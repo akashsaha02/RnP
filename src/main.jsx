@@ -27,6 +27,7 @@ import Certificate from './components/Dashboard/Certificate.jsx'
 import ProjectDetails from './components/Dashboard/ProjectDetails.jsx'
 import NewJob from './components/Dashboard/NewJob.jsx'
 import EditJob from './components/Dashboard/EditJob.jsx'
+import CertificateAdmin from './components/Dashboard/CertificateAdmin.jsx'
 
 
 
@@ -175,17 +176,23 @@ const router = createBrowserRouter([
           <Sidebar />,
           <EditJob/>
         ]
+      
+      },{
+        path: 'certificate-admin',
+        element: [
+          <Sidebar />,
+          <CertificateAdmin />
+        ]
       }
-
-    ]
-  }, {
+    ],
+   {
     path: 'error',
     element: [
       <Error />
     ]
-  }
+   }
+}])
 
-])
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   < React.StrictMode >
