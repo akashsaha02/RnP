@@ -42,61 +42,61 @@ const ProjectDetails = () => {
                         <p className="text-lg text-center">Details of the current Project</p>
                         <div className="grid grid-cols-2 gap-4 pt-8 pb-14 mx-20">
                             {/* Project Title */}
-                            <div className="flex justify-start bg-white border-2 border-gray-400 rounded-xl">
-                                <div className='mx-6 my-4'>
+                            <div className="grid grid-cols-4  bg-white border-2 border-gray-400 rounded-xl h-40">
+                                <div className='col-1 mx-6 my-4 flex justify-center items-center'>
                                     <img src={title} className='w-100' alt="" />
                                 </div>
-                                <div className='my-auto '>
+                                <div className='my-10 col-span-3 mx-2'>
                                     <h2 className='text-xl font-semibold'>Title</h2>
                                     <p>Project A</p>
                                 </div>
                             </div>
                             {/* Project Description */}
-                            <div className="flex justify-start bg-white border-2 border-gray-400 rounded-xl">
-                                <div className='mx-6 my-4'>
+                            <div className="grid grid-cols-4 bg-white border-2 border-gray-400 rounded-xl h-40">
+                                <div className='col-1 mx-6 my-4 w- flex justify-center items-center'>
                                     <img src={document} className='w-100' alt="" />
                                 </div>
-                                <div className='my-auto '>
+                                <div className='my-10 col-span-3 mx-2 overflow-y-scroll'>
                                     <h2 className='text-xl font-semibold'>Description</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
+                                    <p className=''>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga aperiam dignissimos numquam odit consectetur perspiciatis voluptatibus fugiat quod sunt sapiente! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum cumque aliquam soluta recusandae. Quis voluptatem cumque itaque! Dolorum iste consequuntur voluptatum sed iusto ipsum laborum excepturi facilis, qui voluptates est! </p>
                                 </div>
                             </div>
                             {/* Project Start Date */}
-                            <div className="flex justify-start bg-white border-2 border-gray-400 rounded-xl">
-                                <div className='mx-6 my-4'>
+                            <div className="grid grid-cols-4 bg-white border-2 border-gray-400 rounded-xl h-40">
+                                <div className='col-1 mx-6 my-4 w- flex justify-center items-center'>
                                     <img src={date} className='w-100' alt="" />
                                 </div>
-                                <div className='my-auto '>
+                                <div className='my-10 col-span-3 mx-2'>
                                     <h2 className='text-xl font-semibold'>Start Date</h2>
                                     <p >01/01/2023</p>
                                 </div>
                             </div>
                             {/* Project End Date */}
-                            <div className="flex justify-start bg-white border-2 border-gray-400 rounded-xl">
-                                <div className='mx-6 my-4'>
+                            <div className="grid grid-cols-4 bg-white border-2 border-gray-400 rounded-xl h-40">
+                                <div className='col-1 mx-6 my-4 w- flex justify-center items-center'>
                                     <img src={date} className='w-100' alt="" />
                                 </div>
-                                <div className='my-auto '>
+                                <div className='my-10 col-span-3 mx-2'>
                                     <h2 className='text-xl font-semibold'>End Date</h2>
                                     <p >01/04/2023</p>
                                 </div>
                             </div>
                             {/* Project Status */}
-                            <div className="flex justify-start bg-white border-2 border-gray-400 rounded-xl">
-                                <div className='mx-6 my-4'>
+                            <div className="grid grid-cols-4 bg-white border-2 border-gray-400 rounded-xl h-40">
+                                <div className='col-1 mx-6 my-4 w- flex justify-center items-center'>
                                     <img src={status} className='w-100' alt="" />
                                 </div>
-                                <div className='my-auto '>
+                                <div className='my-10 col-span-3 mx-2'>
                                     <h2 className='text-xl font-semibold'>Status</h2>
                                     <p >Ongoing</p>
                                 </div>
                             </div>
                             {/* Project SRS Document */}
-                            <div className="flex justify-start bg-white border-2 border-gray-400 rounded-xl">
-                                <div className='mx-6 my-4'>
+                            <div className="grid grid-cols-4 bg-white border-2 border-gray-400 rounded-xl h-40">
+                                <div className='col-1 mx-6 my-4 w- flex justify-center items-center'>
                                     <img src={srs} className='w-100' alt="" />
                                 </div>
-                                <div className='my-auto '>
+                                <div className='my-10 col-span-3 mx-2'>
                                     <h2 className='text-xl font-semibold'>SRS Document</h2>
                                     <p >Project A</p>
                                 </div>
