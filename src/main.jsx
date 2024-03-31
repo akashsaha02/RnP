@@ -160,24 +160,24 @@ const router = createBrowserRouter([
         path: 'project-details',
         element: [
           <Sidebar />,
-          <ProjectDetails/>
+          <ProjectDetails />
         ]
       },
       {
         path: 'newJob',
         element: [
           <Sidebar />,
-          <NewJob/>
+          <NewJob />
         ]
       },
       {
         path: 'editJob',
         element: [
           <Sidebar />,
-          <EditJob/>
+          <EditJob />
         ]
-      
-      },{
+
+      }, {
         path: 'certificate-admin',
         element: [
           <Sidebar />,
@@ -185,13 +185,14 @@ const router = createBrowserRouter([
         ]
       }
     ],
-   {
+
+  }, {
     path: 'error',
     element: [
       <Error />
     ]
-   }
-}])
+  }
+])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
