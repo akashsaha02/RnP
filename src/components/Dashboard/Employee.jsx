@@ -37,7 +37,7 @@ const Employee = () => {
                 <div>
                     <h1 className="text-3xl font-bold text-center mb-8 mt-4">Employees</h1>
                     {/* Employee Card  Heading*/}
-                    <div className="grid grid-cols-5 gap-5 bg-primary-600 text-white shadow-gray-300 shadow-xl rounded-t-lg p-6 w-full">
+                    <div className="grid grid-cols-6 gap-3 bg-primary-600 text-white shadow-gray-300 shadow-xl rounded-t-lg p-5 w-full">
                         <div className='flex justify-center items-center'>
                             <h2 className="text-xl font-bold">Name</h2>
                         </div>
@@ -52,6 +52,9 @@ const Employee = () => {
                         </div>
                         <div className='flex justify-center items-center'>
                             <h2 className="text-xl font-bold">Project</h2>
+                        </div>
+                        <div className='flex justify-center items-center'>
+                            <h2 className="text-xl font-bold">Receipt</h2>
                         </div>
                     </div>
                 </div>
